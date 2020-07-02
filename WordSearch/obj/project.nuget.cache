@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "4Ukn1k9RYFyJUxKJ4xzTYszXTD9AAhDqZ99kl1MAN6qoX4H/ZDC9rSwmMoLG5PQODiS1167/eAsXtUOVSHU5Qw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\micha\\Desktop\\Sheridan\\Sem4\\C#\\Assignments\\WordSearch\\WordSearch\\WordSearch.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\micha\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}

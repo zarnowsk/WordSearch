@@ -1,0 +1,60 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:WordSearch">
+
+    <Style x:Key="btnStyle" TargetType="{x:Type Button}">
+        <!--Below code found on Stackoverflow to overwrite default button styling on hover-->
+        <!--https://stackoverflow.com/questions/17758904/wpf-trigger-not-working-as-intended-->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter x:Name="PART_Content"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          TextElement.Foreground="{TemplateBinding Foreground}"></ContentPresenter>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Setter Property="Button.Foreground" Value="{x:Static local:ColorPresets.BrightForeground}"/>
+        <Setter Property="Button.Background" Value="{x:Static local:ColorPresets.BrightButtonBackground}"/>
+        <Setter Property="Button.BorderBrush" Value="{x:Static local:ColorPresets.BrightBorder}"/>
+        <Style.Triggers>
+            <Trigger Property="Button.IsMouseOver" Value="True">
+                <Setter Property="Button.Background" Value="{x:Static local:ColorPresets.BrightHover}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="boardStyle">
+        <Setter Property="Window.Background" Value="{x:Static local:ColorPresets.BrightBoard}"/>
+    </Style>
+
+    <Style x:Key="labelStyle">
+        <Setter Property="Label.Foreground" Value="{x:Static local:ColorPresets.BrightForeground}"/>
+    </Style>
+
+    <Style x:Key="txtStyle">
+        <Setter Property="TextBox.Foreground" Value="{x:Static local:ColorPresets.BrightForeground}"/>
+        <Setter Property="TextBox.Background" Value="{x:Static local:ColorPresets.BrightTextBackground}"/>
+        <Setter Property="TextBox.BorderBrush" Value="{x:Static local:ColorPresets.BrightBorder}"/>
+        <Setter Property="TextBox.TextAlignment" Value="Center"/>
+        <Setter Property="TextBox.VerticalAlignment" Value="Stretch"/>
+        <Setter Property="TextBox.VerticalContentAlignment" Value="Center"/>
+        <Setter Property="TextBox.HorizontalAlignment" Value="Stretch"/>
+    </Style>
+
+    <Style x:Key="menuStyle">
+        <Setter Property="Menu.Background" Value="{x:Static local:ColorPresets.BrightBoard}"/>
+        <Setter Property="Menu.Foreground" Value="{x:Static local:ColorPresets.BrightForeground}"/>
+    </Style>
+
+    <Style x:Key="menuItemStyle" TargetType="MenuItem">
+        <Setter Property="Menu.Foreground" Value="Black"/>
+    </Style>
+
+</ResourceDictionary>

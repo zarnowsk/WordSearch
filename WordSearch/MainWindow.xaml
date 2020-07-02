@@ -1,0 +1,49 @@
+﻿<Window x:Class="WordSearch.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WordSearch"
+        mc:Ignorable="d"
+        Title="Word Search" Height="400" Width="388" Style="{DynamicResource boardStyle}"
+        ResizeMode="NoResize">
+    <StackPanel Margin="20">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Grid.ColumnSpan="2" Content="ENTER YOUR BOARD SIZE" HorizontalAlignment="Center" Style="{DynamicResource labelStyle}" Margin="0,0,0,20" FontWeight="Bold"/>
+            <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Slider x:Name="sizeSilder" Grid.Column="0" Maximum="15" TickPlacement="BottomRight" TickFrequency="1" IsSnapToTickEnabled="True" 
+                            Foreground="#FF62FFF1" Margin="10,0,0,0" Minimum="5" />
+                <TextBox Grid.Column="1" Text="{Binding ElementName=sizeSilder, Path=Value, UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource txtStyle}"
+                             Width="40" />
+
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label HorizontalAlignment="Right" Style="{DynamicResource labelStyle}" Margin="0,20,0,0" Content="Master Difficulty?"/>
+                <CheckBox x:Name="masterDifficultyChBox" Grid.Column="1" Style="{DynamicResource labelStyle}" HorizontalAlignment="Left" Margin="5,25,0,0"/>
+            </Grid>
+            <Button Grid.Row="2" Grid.Column="1" x:Name="generateBoardBtn" Content="Generate" Style="{DynamicResource btnStyle}" 
+                        Click="generateBoardBtn_Click" Margin="0,20,0,0" IsDefault="True"/>
+        </Grid>
+        <Button Margin="20,50,20,25" Width="50" x:Name="getSizeHelpBtn" Content="Help" Style="{DynamicResource btnStyle}" Click="getSizeHelpBtn_Click"/>
+        <Image Height="100" Width="250" Source="/logo.jpg"/>
+    </StackPanel>
+</Window>
